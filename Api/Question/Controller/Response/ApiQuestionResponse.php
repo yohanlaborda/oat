@@ -2,7 +2,6 @@
 
 namespace Api\Question\Controller\Response;
 
-use DateTimeInterface;
 use JsonSerializable;
 use OAT\Question\Application\Response\ChoiceResponse;
 use OAT\Question\Application\Response\QuestionResponse;

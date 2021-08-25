@@ -39,7 +39,7 @@ final class Text implements Stringable
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function __toString(): string
     {

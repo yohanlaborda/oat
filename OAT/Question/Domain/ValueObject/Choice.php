@@ -31,7 +31,7 @@ final class Choice implements Stringable
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function __toString(): string
     {

@@ -4,6 +4,7 @@ namespace OAT\Question\Domain\ValueObject;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use InvalidArgumentException;
 
 final class CreatedAt
 {
@@ -21,6 +22,16 @@ final class CreatedAt
         return new self(
             DateTimeImmutable::createFromInterface($dateTime)
         );
+    }
+
+    public static function createFromStringFormat(string $dateTime): self
+    {
+        $dateTimeFromFormat = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $dateTime);
+        if (false === $dateTimeFromFormat) {
+            throw new InvalidArgumentException('Incorrectly formatted date.');
+        }
+
+        return new self($dateTimeFromFormat);
     }
 
     public function value(): DateTimeImmutable

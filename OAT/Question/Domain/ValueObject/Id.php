@@ -37,7 +37,7 @@ final class Id implements Stringable
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function __toString(): string
     {

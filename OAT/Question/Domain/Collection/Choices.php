@@ -31,6 +31,11 @@ final class Choices
         );
     }
 
+    public static function createNew(): self
+    {
+        return new self();
+    }
+
     public function add(Choice $choice): void
     {
         $this->choices[] = $choice;
@@ -44,6 +49,9 @@ final class Choices
         return $this->choices;
     }
 
+    /**
+     * @return string[]
+     */
     public function toArray(): array
     {
         if (0 === count($this->choices)) {
