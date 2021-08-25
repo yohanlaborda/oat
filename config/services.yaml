@@ -13,13 +13,18 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
+    Api\:
+        resource: '../Api/'
         exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
-            - '../src/Tests/'
-
+            - '../Api/DependencyInjection/'
+            - '../Api/Entity/'
+            - '../Api/Kernel.php'
+            - '../Api/Tests/'
+    OAT\:
+        resource: '../OAT/'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    OAT\Question\Infrastructure\Translate\GoogleTranslateService:
+        arguments:
+            $source: '%env(QUESTION_TRANSLATE_SOURCE)%'

@@ -1,0 +1,7 @@
+parameters:
+	level: 8
+	paths:
+		- Api
+		- OAT
+includes:
+    - vendor/yohanlaborda/behaviour/extension.neon
